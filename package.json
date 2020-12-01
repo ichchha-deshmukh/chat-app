@@ -1,0 +1,15 @@
+{
+  "name": "chat-app",
+  "version": "0.0.1",
+  "description": "Chat application using socket.io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "author": "Ichchha Deshmukh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.3"
+  }
+}

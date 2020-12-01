@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <title>Chat App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app__wrapper">
+      <header class="header">
+        <h1>ChatApp</h1>
+        <button id="settings-btn" class="button">Settings</button>
+      </header>
+
+      <div id="modal" class="modal__wrapper">
+        <button id="close-btn" class="modal__button--close">&times;</button>
+        <form id="settings-form" class="form">
+          <div class="form__control">
+            <span class="form__control-title">Username</span>
+            <input
+              id="username"
+              class="form__control-input"
+              type="text"
+              name="username"
+              placeholder="Enter new username"
+            />
+          </div>
+
+          <div class="form__control">
+            <span class="form__control-title">Clock Display Format</span>
+            <div>
+              <label>
+                <input
+                  id="radio-12hr"
+                  class="form__control-radio"
+                  type="radio"
+                  name="clock"
+                  value="12hr"
+                  checked
+                />12 Hours
+              </label>
+              <label>
+                <input
+                  id="radio-24hr"
+                  class="form__control-radio"
+                  type="radio"
+                  name="clock"
+                  value="24hr"
+                />24 Hours
+              </label>
+            </div>
+          </div>
+
+          <div class="form__control">
+            <span class="form__control-title"
+              >Send messages on Ctrl + ENTER</span
+            >
+            <div>
+              <label>
+                <input
+                  id="radio-On"
+                  class="form__control-radio"
+                  type="radio"
+                  name="enterToSend"
+                  value="On"
+                  checked
+                />On
+              </label>
+              <label>
+                <input
+                  id="radio-Off"
+                  class="form__control-radio"
+                  type="radio"
+                  name="enterToSend"
+                  value="Off"
+                />Off
+              </label>
+            </div>
+          </div>
+
+          <div class="form__control form__control--center">
+            <input type="submit" class="button" value="Save" />
+          </div>
+          <div class="form__control--center">
+            <a href="#" id="reset-btn" class="form__reset">Reset to Default</a>
+          </div>
+        </form>
+      </div>
+
+      <main id="chat-section" class="chat__wrapper">
+        <div class="chat__blank--placeholder"></div>
+      </main>
+
+      <footer class="send-message">
+        <textarea
+          id="text-area"
+          class="send-message__input"
+          type="text"
+          placeholder="Enter a message"
+        ></textarea>
+
+        <button id="send-btn" class="button send-message__button" type="button">
+          Send
+        </button>
+      </footer>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/client.js"></script>
+  </body>
+</html>
